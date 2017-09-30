@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    913785,      17611]
-NotebookOptionsPosition[    911019,      17518]
-NotebookOutlinePosition[    911375,      17534]
-CellTagsIndexPosition[    911332,      17531]
+NotebookDataLength[    946513,      18483]
+NotebookOptionsPosition[    943064,      18372]
+NotebookOutlinePosition[    943397,      18387]
+CellTagsIndexPosition[    943354,      18384]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,13 +21,67 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell["\<\
-Log-normal distributions to approximate the measured total BBH merger rate \
-(Abbott et al. 2017; arXiv:1706.01812 )\
+Notebook to accompany \[OpenCurlyDoubleQuote]Are the LIGO\[Dash]Virgo \
+observations the product of a single formation channel?\
+\[CloseCurlyDoubleQuote]\
 \>", "Section",
  CellChangeTimes->{{3.711877173681087*^9, 3.711877174582952*^9}, {
    3.7118772879970703`*^9, 3.7118773323001833`*^9}, 3.711877602788217*^9, {
    3.711877696005578*^9, 3.711877706741353*^9}, {3.711887162439646*^9, 
-   3.711887168999408*^9}}],
+   3.711887168999408*^9}, {3.711951591103487*^9, 3.711951594796299*^9}, {
+   3.711951782937495*^9, 3.711951817778099*^9}, {3.7119518595721607`*^9, 
+   3.711951877491835*^9}, {3.715792710278966*^9, 3.715792717603401*^9}}],
+
+Cell[TextData[{
+ "Below we provide examples of how to calcualte the probabilities that the \
+first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " gravitational-wave events detected by come from a single formation \
+channel, given a variety of assumptions about the rates for the different \
+channels.\n\nCode is provided for the scenarios we discuss in the \
+accompanying paper; modifying these allows you to explore your own choice of \
+scenario assumptions."
+}], "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880290646591*^9}, {3.711951742648837*^9, 3.7119517780875196`*^9}, {
+   3.711951995244424*^9, 3.711952185805478*^9}, 3.7119549358652477`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Working", " ", "precesion", " ", "for", " ", "numerical", " ", 
+    "integration"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"wp", "=", "10"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.7149101877887897`*^9, 3.7149102109446707`*^9}, {
+   3.714910427649371*^9, 3.714910429670804*^9}, {3.714910595897161*^9, 
+   3.714910596096056*^9}, 3.715792617878666*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Rate prior: log-normal distributions to approximate the measured total BBH \
+merger rate (Abbott et al. 2017)\
+\>", "Section",
+ CellChangeTimes->{{3.711877173681087*^9, 3.711877174582952*^9}, {
+   3.7118772879970703`*^9, 3.7118773323001833`*^9}, 3.711877602788217*^9, {
+   3.711877696005578*^9, 3.711877706741353*^9}, {3.711887162439646*^9, 
+   3.711887168999408*^9}, {3.7157926885818357`*^9, 3.715792691904265*^9}, 
+   3.71579471107514*^9}],
+
+Cell["\<\
+For most calcualtions, we assume that a unifrom prior (and uncorrelated) \
+prior on the rates. The priors below allows us to test the impact of folding \
+in information from LIGO and Virgo's measurement of the total merger rate.\
+\>", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880290646591*^9}, {3.711951456908852*^9, 3.711951609249905*^9}, {
+  3.715794697628439*^9, 3.71579469887113*^9}}],
 
 Cell[CellGroupData[{
 
@@ -1985,9 +2039,9 @@ pRSYKCn/ZUJJgECJT7kUFb8On1paYsKCQdtuL/Y66n/+hsT+
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -2031,9 +2085,9 @@ pRSYKCn/ZUJJgECJT7kUFb8On1paYsKCQdtuL/Y66n/+hsT+
                     0.587148, 0.40736066666666665`, 0.09470066666666668], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.880722, 0.611041, 0.142051]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -2077,9 +2131,9 @@ pRSYKCn/ZUJJgECJT7kUFb8On1paYsKCQdtuL/Y66n/+hsT+
                     0.37345400000000006`, 0.461046, 0.12992333333333334`], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.560181, 0.691569, 0.194885]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -2124,9 +2178,9 @@ pRSYKCn/ZUJJgECJT7kUFb8On1paYsKCQdtuL/Y66n/+hsT+
                     0.13945266666666667`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.922526, 0.385626, 0.209179]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -2181,7 +2235,18 @@ pRSYKCn/ZUJJgECJT7kUFb8On1paYsKCQdtuL/Y66n/+hsT+
    3.711881855072464*^9, 3.711881944539212*^9, 3.711883550394449*^9, 
    3.7118838518730383`*^9, 3.714908892402464*^9, 3.7149102245002537`*^9, 
    3.714910433824664*^9, 3.714910635514584*^9, 3.715788663208682*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+The Overall range and Combined ranges give similar results. However, using \
+either the uniform-in-log or the power-law ranges can give different results \
+(try it out).\
+\>", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880290646591*^9}, {3.711951456908852*^9, 3.711951609249905*^9}, {
+  3.715794418113717*^9, 3.715794473693836*^9}, {3.715794511198378*^9, 
+  3.715794553487094*^9}, {3.715794668742948*^9, 3.715794688545362*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -2190,34 +2255,76 @@ Cell["Scenarios A and B ", "Section",
  CellChangeTimes->{{3.71187772032374*^9, 3.7118777327303343`*^9}, {
   3.711878678843822*^9, 3.711878731107291*^9}}],
 
-Cell["\<\
-Scenario A: a highly uncertain scenario where the prior rate ranges are \
-symmetric and span 6 orders of magnitude.
-
+Cell[TextData[{
+ "These are simple toy models to illustrate the effects of changing the range \
+of uncertainty for the rates.\n\nScenario A: a highly uncertain scenario \
+where the prior rate ranges are symmetric and span 6 orders of magnitude.\n\n\
 Scenario B: a moderately uncertain variant of scenario A; the two ranges are \
-again symmetric but only span 2.5 orders of magnitude.
-
-Here we compute P(n), P1(n) and P2(n) for these scenarios:
-- P(n) = the probability that the first n events all come from the same \
-channel (either 1 or 2)
-- P1(n) = the probability that the first n events all come from channel 1
-- P2(n) = the probability that the first n events all come from channel 2\
-\>", "Text",
+again symmetric but only span 2.5 orders of magnitude.\n\nHere we compute ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "), ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") and ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") for these scenarios:\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from the same channel (either 1 or 2)\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 1\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 2"
+}], "Text",
  CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
-  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
-  3.711880290646591*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", " ", 
-   RowBox[{
-   "Working", " ", "precesion", " ", "for", " ", "numerical", " ", 
-    "integration"}], " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"wp", "=", "10"}], ";"}]}]], "Input",
- CellChangeTimes->{{3.7149101877887897`*^9, 3.7149102109446707`*^9}, {
-  3.714910427649371*^9, 3.714910429670804*^9}, {3.714910595897161*^9, 
-  3.714910596096056*^9}}],
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880290646591*^9}, {3.715792587752466*^9, 3.715792589917673*^9}, {
+   3.71579475076464*^9, 3.715794755092349*^9}, 3.715795205064886*^9}],
 
 Cell[CellGroupData[{
 
@@ -2233,6 +2340,11 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{"L", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioA", "=", 
      RowBox[{"Table", "[", 
@@ -2331,6 +2443,11 @@ Cell[BoxData[
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"L", "=", "2.5"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioB", "=", 
      RowBox[{"Table", "[", 
@@ -2487,7 +2604,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.711878180309579*^9, 3.711878383730143*^9}, {
    3.711878544616333*^9, 3.7118785449675837`*^9}, 3.711878660971047*^9, {
    3.7118806641708*^9, 3.7118806666743937`*^9}, {3.711883762234311*^9, 
-   3.7118837757531853`*^9}, {3.7149101567456503`*^9, 3.714910166153105*^9}}],
+   3.7118837757531853`*^9}, {3.7149101567456503`*^9, 3.714910166153105*^9}, {
+   3.715792768187726*^9, 3.715792784195744*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
@@ -3390,7 +3508,19 @@ caV8ODReTB4f7qxjK9RBYvL4yMlMDr3tPe0tBdM2J+KFsZj5H19oOY4=
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Output",
  CellChangeTimes->{3.7149106652491283`*^9, 3.7157886949724503`*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Scenario A has a larger probability that all the events come from a single \
+channel because of the larger prior uncertainty:there is more possibility \
+that the rates are extremely different, meaning that one channel can dominate \
+the other. For Scenario B, it is more probable that the two rates are \
+similar, and so it is more probable that we observe a mixture of events from \
+the two channels. \
+\>", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880290646591*^9}, {3.711952531287386*^9, 3.711952657929708*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -3399,33 +3529,88 @@ Cell["Scenarios C and C\[CloseCurlyQuote]", "Section",
  CellChangeTimes->{{3.71187772032374*^9, 3.7118777327303343`*^9}, {
   3.711878129053995*^9, 3.7118781327258577`*^9}}],
 
-Cell["\<\
-Scenario C: modelled prior rate ranges from BEFORE the first detection.
-
+Cell[TextData[{
+ "These are simple approximations for the two best accepted potential \
+formation channels, based upon different theoretical predictions.\n\nScenario \
+C: modelled prior rate ranges from BEFORE the first detection.\n\n\
 Pre-detection theoretically modelled priors for the two leading candidate \
 formation channels: field binaries [0.5,1000] Gpc^\[Minus]3 yr&\[Minus]1 \
 (Mennekens & Vanbeveren 2014; Dominik et al. 2015), and dynamical formation \
 [2, 20] Gpc^\[Minus]3 yr^\[Minus]1 (Ziosi et al. 2014; Rodriguez et al. \
-2016a), assuming that BBH do merge. These rate estimates were taken from the \
-literature published before the first GW detection to avoid the possibility \
-of models being fine-tuned to accommodate observations.
-
-Scenario Cprime: modelled prior rate ranges from AFTER the first detection. 
-
-The same as scenario C, but using the recent estimates for the prior ranges \
-[7, 1300] Gpc^\[Minus]3 yr^\[Minus]1 (Belczynski et al. 2016; Eldridge & \
-Stanway 2016) and [2, 40] Gpc^\[Minus]3 yr^\[Minus]1 (Rodriguez et al. 2016b; \
-Askar et al. 2017) for the field and dynamical channels respectively.
-
-Here we compute P(n), P1(n) and P2(n) for these scenarios:
-- P(n) = the probability that the first n events all come from the same \
-channel (either 1 or 2)
-- P1(n) = the probability that the first n events all come from channel 1
-- P2(n) = the probability that the first n events all come from channel 2\
-\>", "Text",
+2016a), assuming that BBH do merge (otherwise we would never have n greater \
+than 0). These rate estimates were taken from the literature published before \
+the first GW detection to avoid the possibility of models being fine-tuned to \
+accommodate observations.\n\nScenario C\[CloseCurlyQuote]: modelled prior \
+rate ranges from AFTER the first detection. \n\nThe same as Scenario C, but \
+using the recent estimates for the prior ranges [7, 1300] Gpc^\[Minus]3 yr^\
+\[Minus]1 (Belczynski et al. 2016; Eldridge & Stanway 2016) and [2, 40] Gpc^\
+\[Minus]3 yr^\[Minus]1 (Rodriguez et al. 2016b; Askar et al. 2017) for the \
+field and dynamical channels respectively.\n\nHere we compute ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "), ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") and ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") for these scenarios:\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from the same channel (either 1 or 2)\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 1\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 2"
+}], "Text",
  CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
-  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
-  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}}],
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+   3.7157928267464647`*^9, 3.7157928427613773`*^9}, {3.71579477854084*^9, 
+   3.71579478145506*^9}, 3.71579514658782*^9}],
 
 Cell[CellGroupData[{
 
@@ -3433,11 +3618,17 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"(*", " ", 
    RowBox[{"Scenario", " ", "C"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Isolated", " ", "field", " ", "binaries"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"top1", "=", "1000.0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"low1", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Dynamically", " ", "formed", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top2", "=", "20.0"}], ";"}], "\[IndentingNewLine]", 
@@ -3455,6 +3646,10 @@ Cell[BoxData[
       RowBox[{"Log10", "[", "top2", "]"}], "-", 
       RowBox[{"Log10", "[", "low2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioC", "=", 
      RowBox[{"Table", "[", 
@@ -3558,10 +3753,16 @@ Cell[BoxData[
     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{"Scenario", " ", "Cprime"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Isolated", " ", "fiedl", " ", "binaries"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top1", "=", "1300.0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"low1", "=", "7.0"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Dynamically", " ", "formed", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top2", "=", "40.0"}], ";"}], "\[IndentingNewLine]", 
@@ -3579,6 +3780,10 @@ Cell[BoxData[
       RowBox[{"Log10", "[", "top2", "]"}], "-", 
       RowBox[{"Log10", "[", "low2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioCprime", "=", 
      RowBox[{"Table", "[", 
@@ -3740,7 +3945,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.7118789215605907`*^9, 3.711878941824079*^9}, {
   3.711880347718656*^9, 3.711880622915399*^9}, {3.7118806551310453`*^9, 
   3.711880658482851*^9}, {3.711883787306019*^9, 3.7118837984411583`*^9}, {
-  3.7149101449708767`*^9, 3.71491017786635*^9}}],
+  3.7149101449708767`*^9, 3.71491017786635*^9}, {3.7157928558822327`*^9, 
+  3.7157929018901253`*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
@@ -4238,9 +4444,9 @@ i6QdypmMJ0BSXvCRc8aMJ4CFc9RgzXMFeUJ8HSLYM6ldQZ4Q36deDpXWK8gT
                     RGBColor[0.24561133333333335`, 0.3378526666666667, 
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -4284,9 +4490,9 @@ i6QdypmMJ0BSXvCRc8aMJ4CFc9RgzXMFeUJ8HSLYM6ldQZ4Q36deDpXWK8gT
                     RGBColor[0.587148, 0.40736066666666665`, 
                     0.09470066666666668], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.880722, 0.611041, 0.142051]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -4535,9 +4741,9 @@ PVB3iU2eFFnWls6mj+eTJ0W/Ve+Fxlh98qSIcAxRBRnokSdF2K32BuMOXfI8
                     RGBColor[0.24561133333333335`, 0.3378526666666667, 
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -4581,9 +4787,9 @@ PVB3iU2eFFnWls6mj+eTJ0W/Ve+Fxlh98qSIcAxRBRnokSdF2K32BuMOXfI8
                     RGBColor[0.587148, 0.40736066666666665`, 
                     0.09470066666666668], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.880722, 0.611041, 0.142051]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -4650,7 +4856,49 @@ PVB3iU2eFFnWls6mj+eTJ0W/Ve+Fxlh98qSIcAxRBRnokSdF2K32BuMOXfI8
   3.711880570355728*^9, {3.7118806062267303`*^9, 3.7118806304545593`*^9}, 
    3.711881954835279*^9, 3.711883560939753*^9, 3.7118838907020607`*^9, 
    3.714908933866341*^9, 3.714910675851932*^9, 3.715788705770421*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[{
+ "Scenario C and C\[CloseCurlyQuote] have similar ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "), the change in rates don\[CloseCurlyQuote]t make much of a difference \
+here. However, there is a significant difference in ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") and ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "). This is an effect of the increase of the rate lower bound for the field \
+channel (low1). If all the events come from a single channel, it is more \
+probable that the come from the field channel, as the prior distribution on \
+the rates extends much higher than for the dynamical formation channel. This \
+shows that you need to be careful about drawing conclusions about which \
+channel might be operating, because they can be sensitive to the prior \
+assumptions that went into calcualting the range of possible rates."
+}], "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+   3.711952701276271*^9, 3.7119527240530663`*^9}, {3.711952790680437*^9, 
+   3.711952816880101*^9}, {3.711952917843008*^9, 3.711953023402998*^9}, {
+   3.711953060720867*^9, 3.711953232129037*^9}, 3.715794830120226*^9, {
+   3.715795157269199*^9, 3.715795177238258*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -4660,22 +4908,77 @@ Cell["Scenario D", "Section",
   3.711878136677725*^9, 3.711878138117731*^9}, {3.711878877592216*^9, 
   3.711878880160117*^9}}],
 
-Cell["\<\
-Scenario D: measured total BBH merger rate
-
-The same as scenario C, but incorporating a measurement for the total BBH \
-merger rate (Abbott et al. 2017)
-
-Here we compute P(n), P1(n) and P2(n) for these scenarios:
-- P(n) = the probability that the first n events all come from the same \
-channel (either 1 or 2)
-- P1(n) = the probability that the first n events all come from channel 1
-- P2(n) = the probability that the first n events all come from channel 2\
-\>", "Text",
+Cell[TextData[{
+ "Here we test out the impact of changing our assumptions about how the two \
+channels are correlated.\n\nScenario D: measured total BBH merger rate\n\nThe \
+same as Scenario C, but incorporating a measurement for the total BBH merger \
+rate (Abbott et al. 2017)\n\nHere we compute ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "), ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") and ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") for these scenarios:\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from the same channel (either 1 or 2)\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 1\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 2"
+}], "Text",
  CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
-  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
-  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
-  3.7118808812358294`*^9, 3.7118809449628563`*^9}}],
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+   3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.7157929362478*^9, 
+   3.7157929378920317`*^9}, {3.7157948495165443`*^9, 3.715794850056221*^9}, 
+   3.715795126114748*^9}],
 
 Cell[CellGroupData[{
 
@@ -4691,11 +4994,17 @@ Cell[BoxData[
      RowBox[{
      "trivial", " ", "prior", " ", "on", " ", "total", " ", "rate"}]}]}], " ",
     "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Isolated", " ", "field", " ", "binaries"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"top1", "=", "1000.0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"low1", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Dynamically", " ", "formed", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top2", "=", "20.0"}], ";"}], "\[IndentingNewLine]", 
@@ -4712,6 +5021,19 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"Log10", "[", "top2", "]"}], "-", 
       RowBox[{"Log10", "[", "low2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "Weighting", " ", "for", " ", "the", " ", "total", " ", "rate", " ", 
+      "based", " ", "upon", " ", "measured", " ", "rates"}], ",", " ", 
+     RowBox[{
+      RowBox[{"here", " ", "using", " ", "a", " ", "log"}], "-", 
+      RowBox[{
+      "normal", " ", "approximation", " ", "to", " ", "the", " ", "total", 
+       " ", "rate"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Normalisation", " ", "constant"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"priorvolume", "=", 
@@ -4731,7 +5053,12 @@ Cell[BoxData[
          RowBox[{"Log10", "[", "low2", "]"}], ",", 
          RowBox[{"Log10", "[", "top2", "]"}]}], "}"}], ",", 
        RowBox[{"WorkingPrecision", "\[Rule]", "10"}]}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates", " ", "with", " ", "prior", " ", 
+     "weighting"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioD", "=", 
      RowBox[{"Table", "[", 
@@ -4900,7 +5227,7 @@ Cell[BoxData[
       "\[IndentingNewLine]", "}"}], "}"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.7118809522277527`*^9, 3.7118811933758307`*^9}, {
   3.7118838107198553`*^9, 3.711883813880272*^9}, {3.714910132167459*^9, 
-  3.714910136055064*^9}}],
+  3.714910136055064*^9}, {3.715792951823873*^9, 3.715792972393437*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
@@ -5486,18 +5813,17 @@ gLyleHKKkeXqViD8D6toAr8=
 Cell["\<\
 Scenario D: alternative distribution on total rates
 
-We can repeat scenario D to examine the effect of switching from the \
-\[OpenCurlyDoubleQuote]Overall range\[CloseCurlyDoubleQuote] distribution for \
-the total merger rate to the \[OpenCurlyDoubleQuote]Combined\
-\[CloseCurlyDoubleQuote] distribution (this is equivalent to marginalizing \
-over the two possibilities [power-law and uniform-in-log] reported in Abbott \
-et al. with equal prior weights.)\
+We can repeat scenario D to examine the effect of switching from the Overall \
+range distribution for the total merger rate to the Combined distribution: \
+this is equivalent to marginalizing over the two possibilities [power-law and \
+uniform-in-log] reported in Abbott et al. (2017) with equal prior weights.\
 \>", "Text",
  CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
   3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.711881233757771*^9, 
-  3.71188135049089*^9}}],
+  3.71188135049089*^9}, {3.7157944957165527`*^9, 3.715794495911097*^9}, {
+  3.7157946299976997`*^9, 3.715794656617177*^9}}],
 
 Cell[CellGroupData[{
 
@@ -5509,11 +5835,17 @@ Cell[BoxData[
      RowBox[{
      "alternative", " ", "distribution", " ", "on", " ", "total", " ", 
       "rates"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Isolated", " ", "field", " ", "binaries"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"top1", "=", "1000.0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"low1", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Dynamically", " ", "formed", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top2", "=", "20.0"}], ";"}], "\[IndentingNewLine]", 
@@ -5530,6 +5862,14 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"Log10", "[", "top2", "]"}], "-", 
       RowBox[{"Log10", "[", "low2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Weighting", " ", "for", " ", "the", " ", "total", " ", "rate", " ", 
+     "based", " ", "upon", " ", "measured", " ", "rates"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Normalisation", " ", "constant"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"priorvolume", "=", 
@@ -5549,7 +5889,12 @@ Cell[BoxData[
          RowBox[{"Log10", "[", "low2", "]"}], ",", 
          RowBox[{"Log10", "[", "top2", "]"}]}], "}"}], ",", 
        RowBox[{"WorkingPrecision", "\[Rule]", "10"}]}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates", " ", "with", " ", "prior", " ", 
+     "weighting"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioDalt", "=", 
      RowBox[{"Table", "[", 
@@ -5718,7 +6063,7 @@ Cell[BoxData[
       "\[IndentingNewLine]", "}"}], "}"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.7118809522277527`*^9, 3.7118811933758307`*^9}, {
   3.711881356782627*^9, 3.711881408883546*^9}, {3.711883817952495*^9, 
-  3.7118838250000973`*^9}}],
+  3.7118838250000973`*^9}, {3.715793004111067*^9, 3.715793025494195*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
@@ -6048,9 +6393,9 @@ OzG9WPgPnHg6AA==
                     0.24561133333333335`, 0.3378526666666667, 
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -6237,9 +6582,9 @@ pP8D9tsHAw==
                     0.24561133333333335`, 0.3378526666666667, 
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
+                    Dynamic[{Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -6300,7 +6645,25 @@ pP8D9tsHAw==
  CellChangeTimes->{3.711881195942354*^9, 3.7118814150946217`*^9, 
   3.7118819600892353`*^9, 3.711883566574258*^9, 3.7118839106942883`*^9, 
   3.7149089547816277`*^9, 3.714910694596169*^9, 3.715788725907752*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Results are similar using the Overall range and Combined priors, as expected.
+
+However, changing the prior on the rates can have an impact on the various \
+probabilities. For example, if the prior on the total rate is higher, it is \
+more natural to explain events using the field channel (as that has rates \
+which can extend to higher values), and so the probabilities that all the \
+events come from the field channel increases realtive to the probability that \
+they all come from the dynamical channel.\
+\>", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+  3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.711881233757771*^9, 
+  3.71188135049089*^9}, {3.711953905891169*^9, 3.711954012956711*^9}, {
+  3.711954044968213*^9, 3.711954117951408*^9}, {3.715794867827895*^9, 
+  3.7157948756341133`*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -6309,26 +6672,84 @@ Cell["Scenario E", "Section",
  CellChangeTimes->{{3.71187772032374*^9, 3.7118777327303343`*^9}, 
    3.711878141749584*^9, 3.711878882727991*^9}],
 
-Cell["\<\
-Scenario E: additional more speculative formation channel(s)
-
-The same as scenario C, but allowing for additional formation channel(s). We \
-assume that these (more speculative) channels only operate with probability \
-\[Rho] = 0.1; if they operate a highly uncertain prior on the combined \
-additional rate R\[GreaterEqual]3 spanning 10 orders of magnitude, with an \
-upper limit set by the Initial LIGO\[Dash]Virgo bound is used.
-
-Here we compute P(n), P1(n) and P2(n) for these scenarios:
-- P(n) = the probability that the first n events all come from the same \
-channel (either 1 or 2)
-- P1(n) = the probability that the first n events all come from channel 1
-- P2(n) = the probability that the first n events all come from channel 2\
-\>", "Text",
+Cell[TextData[{
+ "Relaxing the assumptino that we have exactly two channels that operate.\n\n\
+Scenario E: additional more speculative formation channel(s)\n\nThe same as \
+Scenario C, but allowing for additional formation channel(s). We assume that \
+these (more speculative) channels only operate with probability \[Rho] = 0.1; \
+if they operate a highly uncertain prior on the combined additional rate ",
+ StyleBox["R ",
+  FontSlant->"Italic"],
+ "\[GreaterEqual] 3 spanning 10 orders of magnitude, with an upper limit set \
+by the Initial LIGO\[Dash]Virgo sixth science run (S6) bound is used (Aasi et \
+al. 2013).\n\nHere we compute ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "), ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") and ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") for these scenarios:\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from the same channel (either 1 or 2)\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 1\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 2"
+}], "Text",
  CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
-  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
-  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
-  3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.71188143698512*^9, 
-  3.711881491368896*^9}, {3.714908869468135*^9, 3.714908869755147*^9}}],
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+   3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.71188143698512*^9, 
+   3.711881491368896*^9}, {3.714908869468135*^9, 3.714908869755147*^9}, {
+   3.7157930591569433`*^9, 3.7157930821747017`*^9}, {3.715794887843749*^9, 
+   3.715794895829124*^9}, 3.7157951158983*^9}],
 
 Cell[CellGroupData[{
 
@@ -6344,11 +6765,17 @@ Cell[BoxData[
      RowBox[{"with", " ", "probability", " ", "\[Rho]", " ", "of"}], " ", ">", 
      RowBox[{"3", "rd", " ", "operating"}]}]}], " ", "*)"}], 
   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Isolated", " ", "field", " ", "binaries"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"top1", "=", "1000.0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"low1", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Dynamically", " ", "formed", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top2", "=", "20.0"}], ";"}], "\[IndentingNewLine]", 
@@ -6366,6 +6793,10 @@ Cell[BoxData[
       RowBox[{"Log10", "[", "top2", "]"}], "-", 
       RowBox[{"Log10", "[", "low2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Third", ",", " ", 
+     RowBox[{"more", " ", "speculative", " ", "channel"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"upS6", "=", 
      RowBox[{"Log10", "[", "900.", "]"}]}], ";"}], " ", 
@@ -6374,10 +6805,22 @@ Cell[BoxData[
     "This", " ", "is", " ", "the", " ", "upper", " ", "limit", " ", "from", 
      " ", "S6"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"\[Rho]", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"\[Rho]", "=", "0.1"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "Probability", " ", "that", " ", "the", " ", "channel", " ", "is", " ", 
+      "in", " ", "operation"}], ",", " ", 
+     RowBox[{
+     "set", " ", "to", " ", "1", " ", "for", " ", "a", " ", "definite", " ", 
+      "third", " ", "channel"}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"L3", "=", "10."}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioE", "=", 
      RowBox[{"Table", "[", 
@@ -6598,7 +7041,8 @@ Cell[BoxData[
       "\[IndentingNewLine]", "}"}], "}"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.7118815109316797`*^9, 3.711881642390336*^9}, {
   3.71188383745695*^9, 3.711883841872558*^9}, {3.714908874151123*^9, 
-  3.714908874405595*^9}, {3.714910116090239*^9, 3.714910124599173*^9}}],
+  3.714908874405595*^9}, {3.714910116090239*^9, 3.714910124599173*^9}, {
+  3.715793089452135*^9, 3.7157931198579397`*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
@@ -7179,7 +7623,23 @@ rVPIk8Jwuc4z+2IyeUsRWvX6rtY7WfYvFdMYoA==
  CellChangeTimes->{3.711881651574196*^9, 3.7118819681882677`*^9, 
   3.711883574881708*^9, 3.7118839422001667`*^9, 3.7149089997161493`*^9, 
   3.714910733217451*^9, 3.715788766860612*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Results here are similar to Scenario C. As \[Rho] is made smaller, we get \
+closer to Scenario C: the inclusion of highly speculative channels shouldn\
+\[CloseCurlyQuote]t impact our conclusions. As \[Rho] is made bigger, we see \
+a larger impact. Introducing more channels should increases the probbability \
+that we are seeing a mixture of different channels, as there are more \
+possible ways for this to happen.\
+\>", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+  3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.71188143698512*^9, 
+  3.711881491368896*^9}, {3.711954134319165*^9, 3.711954150068831*^9}, {
+  3.71195423535994*^9, 3.7119542421041107`*^9}, {3.711954356408902*^9, 
+  3.711954362933906*^9}, {3.711954473550503*^9, 3.7119546146245747`*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -7189,6 +7649,15 @@ Cell["Plotting summary results for all of the above scenarios", "Section",
   3.71188634011062*^9, 3.711886346494358*^9}, {3.714909312798903*^9, 
   3.714909319071122*^9}, {3.7149102367430363`*^9, 3.7149102463196783`*^9}, {
   3.714910288610404*^9, 3.714910289007909*^9}}],
+
+Cell["How to make Figure 2 from the accompanying paper", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+  3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.711881233757771*^9, 
+  3.71188135049089*^9}, {3.711953905891169*^9, 3.711954012956711*^9}, {
+  3.711954044968213*^9, 3.711954117951408*^9}, {3.7119547806347218`*^9, 
+  3.711954795721781*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -7447,7 +7916,19 @@ Cell[BoxData[
         RowBox[{"{", 
          RowBox[{"i", ",", "0", ",", "1", ",", "0.05"}], "}"}]}], "]"}]}]}], 
     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", "Colours", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Colours", ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"based", " ", "upon", " ", "the", " ", "colour"}], "-", 
+       RowBox[{"blind", " ", "palette", " ", "from", " ", 
+        RowBox[{"http", ":"}]}]}], "//", 
+      RowBox[{
+       RowBox[{"jfly", ".", "iam", ".", "u"}], "-", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"tokyo", ".", "ac", ".", "jp"}], "/", "color"}], "/", 
+        "#pallet"}]}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"cols", "=", 
      RowBox[{"{", 
@@ -7870,7 +8351,7 @@ Cell[BoxData[
    3.711884239640997*^9}, {3.711884387415915*^9, 3.711884387573517*^9}, {
    3.711885612339016*^9, 3.711885670986719*^9}, {3.711885733122806*^9, 
    3.711885748997777*^9}, {3.7118858402514772`*^9, 3.711885855259667*^9}, {
-   3.715788637800242*^9, 3.7157886459283953`*^9}}],
+   3.715788637800242*^9, 3.7157886459283953`*^9}, 3.715793158205413*^9}],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -15886,26 +16367,89 @@ Cell["Scenario F", "Section",
    3.711878141749584*^9, 3.711878882727991*^9, {3.714909327121191*^9, 
    3.714909327399715*^9}}],
 
-Cell["\<\
-Scenario F: the possibility of only one channel operating (Dynamical channel)
-
-The same as scenario C, but allowing for the possibility that only one \
-channel operates. Here we assume that the field binary channel only operates \
-with probability \[Rho] = 0.1.
-
-Here we compute P(n), P1(n) and P2(n) for these scenarios:
-- P(n) = the probability that the first n events all come from the same \
-channel (either 1 or 2)
-- P1(n) = the probability that the first n events all come from channel 1
-- P2(n) = the probability that the first n events all come from channel 2\
-\>", "Text",
+Cell[TextData[{
+ "Here and in Scenario F\[CloseCurlyQuote], we relax the assumption that the \
+have to be multiple channels operating.\n\nScenario F: the possibility of \
+only one channel definitely operating (Dynamical channel)\n\nThe same as \
+Scenario C, but allowing for the possibility that only one channel operates. \
+Here we assume that the field binary channel only operates with probability \
+\[Rho] = 0.1. We know that binaries of compact objects do form via isolated \
+evolution, so this example is more of an illustration. The scenario might be \
+applicable if it is not the case that binaries formed through isolated \
+evolution are close enough to merge in a Hubble time, but this could be more \
+naturally described by using a very low rate in Scenario C.\n\nHere we \
+compute ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "), ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") and ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") for these scenarios:\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from the same channel (either 1 or 2)\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 1\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 2"
+}], "Text",
  CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
-  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
-  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
-  3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.71188143698512*^9, 
-  3.711881491368896*^9}, {3.714908869468135*^9, 3.714908869755147*^9}, {
-  3.714909330199748*^9, 3.714909406273416*^9}, {3.714909443673326*^9, 
-  3.71490945336133*^9}, {3.714909483374425*^9, 3.7149095215603743`*^9}}],
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+   3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.71188143698512*^9, 
+   3.711881491368896*^9}, {3.714908869468135*^9, 3.714908869755147*^9}, {
+   3.714909330199748*^9, 3.714909406273416*^9}, {3.714909443673326*^9, 
+   3.71490945336133*^9}, {3.714909483374425*^9, 3.7149095215603743`*^9}, {
+   3.715792323319502*^9, 3.715792325371399*^9}, {3.715793217285755*^9, 
+   3.7157932765170116`*^9}, {3.715793358120838*^9, 3.7157936577548447`*^9}, {
+   3.7157939569129353`*^9, 3.715793961043481*^9}, {3.715794916135627*^9, 
+   3.7157949188599987`*^9}, 3.715795103324088*^9}],
 
 Cell[CellGroupData[{
 
@@ -15919,12 +16463,21 @@ Cell[BoxData[
       " ", "operating"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"\[Rho]", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"\[Rho]", "=", "0.1"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Set", " ", "to", " ", "1", " ", "to", " ", "recover", " ", "Scenario", 
+     " ", "C"}], " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Isolated", " ", "field", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top1", "=", "1000.0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"low1", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Dynamically", " ", "formed", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top2", "=", "20.0"}], ";"}], "\[IndentingNewLine]", 
@@ -15942,6 +16495,10 @@ Cell[BoxData[
       RowBox[{"Log10", "[", "top2", "]"}], "-", 
       RowBox[{"Log10", "[", "low2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PscenarioF", "=", 
      RowBox[{"Table", "[", 
@@ -16109,7 +16666,8 @@ Cell[BoxData[
   3.7149096936974583`*^9, 3.714909720721119*^9}, {3.7149097700159492`*^9, 
   3.7149097785366507`*^9}, {3.714909817114964*^9, 3.714909824028446*^9}, {
   3.714909862935287*^9, 3.7149099904250927`*^9}, {3.714910603638139*^9, 
-  3.714910610483672*^9}, {3.714910765402782*^9, 3.714910769928787*^9}}],
+  3.714910610483672*^9}, {3.714910765402782*^9, 3.714910769928787*^9}, {
+  3.715793283445623*^9, 3.715793343968232*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
@@ -16685,37 +17243,109 @@ zcaZJ4M3Vrz8/g9Dg0sy
   "Grid"]], "Output",
  CellChangeTimes->{{3.714909929178985*^9, 3.71490997173166*^9}, {
    3.714910758971033*^9, 3.714910781929841*^9}, 3.715788797149626*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+As expected, in this case it is much more probable that the definite channel \
+dominates. As \[Rho] tends towards zero, it would become a certainty that \
+only one channel accounts for all the events.\
+\>", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+  3.711952701276271*^9, 3.7119527240530663`*^9}, {3.711952790680437*^9, 
+  3.711952816880101*^9}, {3.711952917843008*^9, 3.711953023402998*^9}, {
+  3.711953060720867*^9, 3.711953232129037*^9}, {3.715793692254817*^9, 
+  3.715793762280158*^9}, {3.715793822052051*^9, 3.715793855783333*^9}, {
+  3.715793889671894*^9, 3.715793907398807*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
 
-Cell["Scenario G", "Section",
+Cell["Scenario F\[CloseCurlyQuote]", "Section",
  CellChangeTimes->{{3.71187772032374*^9, 3.7118777327303343`*^9}, 
    3.711878141749584*^9, 3.711878882727991*^9, {3.714909327121191*^9, 
-   3.714909327399715*^9}, {3.714909471615245*^9, 3.714909471925685*^9}}],
+   3.714909327399715*^9}, {3.714909471615245*^9, 3.714909471925685*^9}, {
+   3.715793941262097*^9, 3.71579397052899*^9}}],
 
-Cell["\<\
-Scenario G: the possibility of only one channel operating (Field binary \
-channel)
-
-The same as scenario C, but allowing for the possibility that only one \
+Cell[TextData[{
+ "THe complement of Scenario F, where we swap the definite and uncertain \
+channel.  The calcualtion is the same as for Scenario F, but switched for the \
+other channel to illustrate the effect.\n\nScenario F\[CloseCurlyQuote]: the \
+possibility of only one channel definitely operating (Field binary channel)\n\
+\nThe same as Scenario C, but allowing for the possibility that only one \
 channel operates. Here we assume that the dynamical channel only operates \
-with probability \[Rho] = 0.1.
-
-Here we compute P(n), P1(n) and P2(n) for these scenarios:
-- P(n) = the probability that the first n events all come from the same \
-channel (either 1 or 2)
-- P1(n) = the probability that the first n events all come from channel 1
-- P2(n) = the probability that the first n events all come from channel 2\
-\>", "Text",
+with probability \[Rho] = 0.1. Again, we know that binaries form dynamically, \
+so this example is more of an illustration.\n\nHere we compute ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ "), ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") and ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") for these scenarios:\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from the same channel (either 1 or 2)\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 1\n- ",
+ StyleBox["P",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "2"], TraditionalForm]]],
+ "(",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ") = the probability that the first ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " events all come from channel 2"
+}], "Text",
  CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
   3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.71188143698512*^9, 
   3.711881491368896*^9}, {3.714908869468135*^9, 3.714908869755147*^9}, {
   3.714909330199748*^9, 3.714909406273416*^9}, {3.714909443673326*^9, 
-  3.714909523232543*^9}}],
+  3.714909523232543*^9}, {3.715792337718541*^9, 3.715792391522174*^9}, {
+  3.7157939725935383`*^9, 3.715794064854988*^9}, {3.71579493016891*^9, 
+  3.715794934106299*^9}, {3.715795042358078*^9, 3.715795079048421*^9}}],
 
 Cell[CellGroupData[{
 
@@ -16723,18 +17353,26 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"(*", " ", 
    RowBox[{"Scenario", " ", 
-    RowBox[{"G", ":", " ", 
+    RowBox[{"Fprime", ":", " ", 
      RowBox[{
      "probability", " ", "\[Rho]", " ", "of", " ", "dynamical", " ", 
       "channel", " ", "operating"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"\[Rho]", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{
+    RowBox[{"\[Rho]", "=", "0.1"}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "Set", " ", "to", " ", "1", " ", "to", " ", "recover", " ", "Scenario", 
+      " ", "C"}], " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Isolated", " ", "field", " ", "binaries"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
     RowBox[{"top1", "=", "1000.0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"low1", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Dynamically", " ", "formed", " ", "binaries"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"top2", "=", "20.0"}], ";"}], "\[IndentingNewLine]", 
@@ -16752,8 +17390,12 @@ Cell[BoxData[
       RowBox[{"Log10", "[", "top2", "]"}], "-", 
       RowBox[{"Log10", "[", "low2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Calculate", " ", "probabilities", " ", "by", " ", "marginalising", " ", 
+     "over", " ", "the", " ", "rates"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"PscenarioG", "=", 
+    RowBox[{"PscenarioFprime", "=", 
      RowBox[{"Table", "[", 
       RowBox[{
        RowBox[{"{", 
@@ -16800,7 +17442,7 @@ Cell[BoxData[
         RowBox[{"n", ",", "1", ",", "25", ",", "0.2"}], "}"}]}], "]"}]}], 
     ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"P1scenarioG", "=", 
+    RowBox[{"P1scenarioFprime", "=", 
      RowBox[{"Table", "[", 
       RowBox[{
        RowBox[{"{", 
@@ -16836,7 +17478,7 @@ Cell[BoxData[
         RowBox[{"n", ",", "1", ",", "25", ",", "0.2"}], "}"}]}], "]"}]}], 
     ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"P2scenarioG", "=", 
+    RowBox[{"P2scenarioFprime", "=", 
      RowBox[{"Table", "[", 
       RowBox[{
        RowBox[{"{", 
@@ -16871,7 +17513,7 @@ Cell[BoxData[
    RowBox[{"(*", " ", "Plots", " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{"ListPlot", "[", 
     RowBox[{
-     RowBox[{"{", "PscenarioG", "}"}], ",", 
+     RowBox[{"{", "PscenarioFprime", "}"}], ",", 
      RowBox[{"Joined", "\[Rule]", "True"}], ",", 
      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
      RowBox[{"FrameLabel", "\[Rule]", 
@@ -16879,7 +17521,7 @@ Cell[BoxData[
        RowBox[{"\"\<Number of events n\>\"", ",", "\"\<P(n)\>\""}], "}"}]}], 
      ",", 
      RowBox[{"PlotLegends", "\[Rule]", 
-      RowBox[{"{", "\"\<Scenario G\>\"", "}"}]}], ",", 
+      RowBox[{"{", "\"\<Scenario Fprime\>\"", "}"}]}], ",", 
      RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"Grid", "[", 
@@ -16888,7 +17530,7 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"ListPlot", "[", 
         RowBox[{
-         RowBox[{"{", "P1scenarioG", "}"}], ",", 
+         RowBox[{"{", "P1scenarioFprime", "}"}], ",", 
          RowBox[{"Joined", "\[Rule]", "True"}], ",", 
          RowBox[{"Frame", "\[Rule]", "True"}], ",", 
          RowBox[{"FrameLabel", "\[Rule]", 
@@ -16897,12 +17539,12 @@ Cell[BoxData[
            "\"\<Number of events n\>\"", ",", 
             "\"\<\!\(\*SubscriptBox[\(P\), \(1\)]\)(n)\>\""}], "}"}]}], ",", 
          RowBox[{"PlotLegends", "\[Rule]", 
-          RowBox[{"{", "\"\<Scenario G\>\"", "}"}]}], ",", 
+          RowBox[{"{", "\"\<Scenario Fprime\>\"", "}"}]}], ",", 
          RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"ListPlot", "[", 
         RowBox[{
-         RowBox[{"{", "P2scenarioG", "}"}], ",", 
+         RowBox[{"{", "P2scenarioFprime", "}"}], ",", 
          RowBox[{"Joined", "\[Rule]", "True"}], ",", 
          RowBox[{"Frame", "\[Rule]", "True"}], ",", 
          RowBox[{"FrameLabel", "\[Rule]", 
@@ -16911,7 +17553,7 @@ Cell[BoxData[
            "\"\<Number of events n\>\"", ",", 
             "\"\<\!\(\*SubscriptBox[\(P\), \(2\)]\)(n)\>\""}], "}"}]}], ",", 
          RowBox[{"PlotLegends", "\[Rule]", 
-          RowBox[{"{", "\"\<Scenario G\>\"", "}"}]}], ",", 
+          RowBox[{"{", "\"\<Scenario Fprime\>\"", "}"}]}], ",", 
          RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], 
       "\[IndentingNewLine]", "}"}], "}"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.7118815109316797`*^9, 3.711881642390336*^9}, {
@@ -16921,13 +17563,14 @@ Cell[BoxData[
   3.7149097785366507`*^9}, {3.714909817114964*^9, 3.714909824028446*^9}, {
   3.714909862935287*^9, 3.71491009864435*^9}, {3.714910615077112*^9, 
   3.7149106210116053`*^9}, {3.714910789938188*^9, 3.7149107935765257`*^9}, {
-  3.714910861232234*^9, 3.7149108702720537`*^9}}],
+  3.714910861232234*^9, 3.7149108702720537`*^9}, {3.715794071286767*^9, 
+  3.715794169284131*^9}, {3.715794230452297*^9, 3.7157942317997103`*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
         Hue[0.67, 0.6, 0.6], 
         Directive[
-         PointSize[0.01388888888888889], 
+         PointSize[0.009166666666666668], 
          RGBColor[0.368417, 0.506779, 0.709798], 
          AbsoluteThickness[1.6]], 
         LineBox[CompressedData["
@@ -16964,16 +17607,26 @@ Ipk8DbLs+sMiksjTwBg3ULUokTwNpJXewZEJ5GmxOdUQ9/Um8rTonRld98NG
         Scaled[0.02]}, {
         Scaled[0.05], 
         Scaled[0.05]}}, AxesOrigin -> {0, 0.9169110429631958}, 
-     PlotRange -> {{0, 25.}, {0.9208676599649483, 1.}}, DisplayFunction -> 
-     Identity, AspectRatio -> NCache[GoldenRatio^(-1), 0.6180339887498948], 
-     Axes -> {True, True}, AxesLabel -> {None, None}, 
-     AxesOrigin -> {0, 0.9169110429631958}, DisplayFunction :> Identity, 
-     Frame -> {{True, True}, {True, True}}, FrameLabel -> {{
+     PlotRange -> {{0, 25.}, {0.9208676599649483, 1.}}, PlotRangeClipping -> 
+     True, ImagePadding -> All, DisplayFunction -> Identity, AspectRatio -> 
+     NCache[GoldenRatio^(-1), 0.6180339887498948], Axes -> {True, True}, 
+     AxesLabel -> {None, None}, AxesOrigin -> {0, 0.9169110429631958}, 
+     DisplayFunction :> Identity, Frame -> {{True, True}, {True, True}}, 
+     FrameLabel -> {{
         FormBox["\"P(n)\"", TraditionalForm], None}, {
         FormBox["\"Number of events n\"", TraditionalForm], None}}, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {None, None}, GridLinesStyle -> Directive[
-       GrayLevel[0.5, 0.4]], ImageSize -> Medium, Method -> {}, 
+       GrayLevel[0.5, 0.4]], ImageSize -> Medium, 
+     Method -> {"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+            Part[#, 1]], 
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+            Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+            Part[#, 1]], 
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+            Part[#, 2]]}& )}}, 
      PlotRange -> {{0, 25.}, {0.9208676599649483, 1.}}, PlotRangeClipping -> 
      True, PlotRangePadding -> {{
         Scaled[0.02], 
@@ -16981,7 +17634,7 @@ Ipk8DbLs+sMiksjTwBg3ULUokTwNpJXewZEJ5GmxOdUQ9/Um8rTonRld98NG
         Scaled[0.05], 
         Scaled[0.05]}}, Ticks -> {Automatic, Automatic}}],FormBox[
     FormBox[
-     TemplateBox[{"\"Scenario G\""}, "PointLegend", 
+     TemplateBox[{"\"Scenario Fprime\""}, "PointLegend", 
       DisplayFunction -> (FormBox[
         StyleBox[
          StyleBox[
@@ -16996,7 +17649,7 @@ Ipk8DbLs+sMiksjTwBg3ULUokTwNpJXewZEJ5GmxOdUQ9/Um8rTonRld98NG
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.25], 
+                    PointSize[0.16500000000000004`], 
                     RGBColor[0.368417, 0.506779, 0.709798], 
                     AbsoluteThickness[1.6]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
@@ -17005,7 +17658,7 @@ Ipk8DbLs+sMiksjTwBg3ULUokTwNpJXewZEJ5GmxOdUQ9/Um8rTonRld98NG
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.25], 
+                    PointSize[0.16500000000000004`], 
                     RGBColor[0.368417, 0.506779, 0.709798], 
                     AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
@@ -17034,11 +17687,11 @@ Ipk8DbLs+sMiksjTwBg3ULUokTwNpJXewZEJ5GmxOdUQ9/Um8rTonRld98NG
            RowBox[{"{", 
              RowBox[{"Directive", "[", 
                RowBox[{
-                 RowBox[{"PointSize", "[", "0.01388888888888889`", "]"}], ",", 
+                 RowBox[{"PointSize", "[", "0.009166666666666668`", "]"}], 
+                 ",", 
                  InterpretationBox[
                   ButtonBox[
                    TooltipBox[
-                    RowBox[{
                     GraphicsBox[{{
                     GrayLevel[0], 
                     RectangleBox[{0, 0}]}, {
@@ -17054,7 +17707,6 @@ Ipk8DbLs+sMiksjTwBg3ULUokTwNpJXewZEJ5GmxOdUQ9/Um8rTonRld98NG
                     Dynamic[{
                     Automatic, 1.35 CurrentValue["FontCapHeight"]/
                     AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                    DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -17108,7 +17760,7 @@ Ipk8DbLs+sMiksjTwBg3ULUokTwNpJXewZEJ5GmxOdUQ9/Um8rTonRld98NG
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
  CellChangeTimes->{3.714910806100054*^9, 3.714910892858036*^9, 
-  3.715788815688328*^9}],
+  3.715788815688328*^9, 3.715794216066709*^9, 3.715794256625787*^9}],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -17116,7 +17768,7 @@ Cell[BoxData[
      TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
             Hue[0.67, 0.6, 0.6], 
             Directive[
-             PointSize[0.01388888888888889], 
+             PointSize[0.009166666666666668], 
              RGBColor[0.368417, 0.506779, 0.709798], 
              AbsoluteThickness[1.6]], 
             LineBox[CompressedData["
@@ -17155,7 +17807,8 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
             Scaled[0.05], 
             Scaled[0.05]}}, AxesOrigin -> {0, 0.9170293363711517}, 
          PlotRange -> {{0, 25.}, {0.919337989101036, 0.9655110436987244}}, 
-         DisplayFunction -> Identity, AspectRatio -> 
+         PlotRangeClipping -> True, ImagePadding -> All, DisplayFunction -> 
+         Identity, AspectRatio -> 
          NCache[GoldenRatio^(-1), 0.6180339887498948], Axes -> {True, True}, 
          AxesLabel -> {None, None}, AxesOrigin -> {0, 0.9170293363711517}, 
          DisplayFunction :> Identity, Frame -> {{True, True}, {True, True}}, 
@@ -17166,7 +17819,16 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
             FormBox["\"Number of events n\"", TraditionalForm], None}}, 
          FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
          GridLines -> {None, None}, GridLinesStyle -> Directive[
-           GrayLevel[0.5, 0.4]], ImageSize -> Medium, Method -> {}, 
+           GrayLevel[0.5, 0.4]], ImageSize -> Medium, 
+         Method -> {"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+                Part[#, 1]], 
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+                Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+                Part[#, 1]], 
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+                Part[#, 2]]}& )}}, 
          PlotRange -> {{0, 25.}, {0.919337989101036, 0.9655110436987244}}, 
          PlotRangeClipping -> True, PlotRangePadding -> {{
             Scaled[0.02], 
@@ -17174,7 +17836,7 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
             Scaled[0.05], 
             Scaled[0.05]}}, Ticks -> {Automatic, Automatic}}],FormBox[
         FormBox[
-         TemplateBox[{"\"Scenario G\""}, "PointLegend", 
+         TemplateBox[{"\"Scenario Fprime\""}, "PointLegend", 
           DisplayFunction -> (FormBox[
             StyleBox[
              StyleBox[
@@ -17189,7 +17851,7 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.25], 
+                    PointSize[0.16500000000000004`], 
                     RGBColor[0.368417, 0.506779, 0.709798], 
                     AbsoluteThickness[1.6]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
@@ -17198,7 +17860,7 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.25], 
+                    PointSize[0.16500000000000004`], 
                     RGBColor[0.368417, 0.506779, 0.709798], 
                     AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
@@ -17228,12 +17890,11 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
                RowBox[{"{", 
                  RowBox[{"Directive", "[", 
                    RowBox[{
-                    RowBox[{"PointSize", "[", "0.01388888888888889`", "]"}], 
+                    RowBox[{"PointSize", "[", "0.009166666666666668`", "]"}], 
                     ",", 
                     InterpretationBox[
                     ButtonBox[
                     TooltipBox[
-                    RowBox[{
                     GraphicsBox[{{
                     GrayLevel[0], 
                     RectangleBox[{0, 0}]}, {
@@ -17246,9 +17907,9 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
                     0.24561133333333335`, 0.3378526666666667, 
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
                     AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -17305,46 +17966,47 @@ CHpeqJk/YBO1kZ4XHh8bNr0YTs8Ls++m/9mzgZ43IiwLd3i++/4PeSdhig==
      TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
             Hue[0.67, 0.6, 0.6], 
             Directive[
-             PointSize[0.01388888888888889], 
+             PointSize[0.009166666666666668], 
              RGBColor[0.368417, 0.506779, 0.709798], 
              AbsoluteThickness[1.6]], 
             LineBox[CompressedData["
-1:eJwt1QtMk1cUB/CKii+KiCiKKK28ykv6ogXc6F8GKOhAp9O1vEuBQqs8BCxF
-hIIwEEUcTilblIcCIkyHUkWHwAhzRJDFOR3TiRI3fDBddMtEcQzc+Sc3X25y
-z++c3NzkY8uTPoo1YjAYGZNr6mtVrpE7HB6XuJ4Sdw3fq5D0901lXKIU3jRf
-3F4hYfwfDP7q38q2Piqp1E9lGsL8JopyWj6XCAVTmY4+7uCz6rTDVD8DxiMz
-FrnIyiVx72IMEePZpqGwz8ibDatAn6Pjuw6RNwfZw+kJ/fVl5M3DuSPd/p03
-DpJnguvy99iNaaWS+HeeKTICZd0ZvAPkmcHsauzj5zP303kzXPQ2dMc+30f+
-AmieZCWUPy2mecyx+IPTb4tfFVG/hbgzr+VYlUUReRboHPSdr/T5lDwLxLF1
-+qq0QvIWQcA5tZdvKKB5FuNa5Md1jkYF5FnCQuAaXLdtL3lLcDh0vfUfrfnk
-Te6buWUh1vnkLUWWbp2TYF8eeVZoybc2YU7oyFsG5ycHxyO1OvKskcpgNl16
-k0ueNQIu5gca8nLJW46k1S/9/zbNJW8FZJfZ+/2QQ54NqoUbU++p9pDHwvKs
-YWunqmy6HxYOOFoxq+/uJp8F88vnBf2s3VTPRplp1cP31VnUjw3d2bKnJVe0
-5K3EC33ppW2WWuq/Ej7fTjOsy8gkbyW2adaXmtzRSN5xAlsM/lt7dqu/hjxb
-rFNd7hk6v4s8Owgv7PCJddpFnh1epnuPNtRkkGcHxo0NJ5JZGTSfPf7cmjNa
-UJNOnj16u46faeWkk+eAu7eaxwZa0shzAEv/pq0eaeQ5QNbGKzG/sZM8RyhS
-9uoexe0kzxFXa/Vj0ydSyeNgbtnx1DWVqeRxkHy9WJHjmUoeB0sPfLji2GAK
-eU6YEzDrZE52CnlOqDm35cgsuxTynPHN8H3msv5k8pxReFpTUqVJJs8ZbbrG
-uzkOyeS5oP5Eu6lfcxJ5Luha26EaXpBEnit6QkyCvtbuIM8VoU2djsUj28lz
-hZtEFu/3yXby3DD643ZuR5+aPDcMFIbLbvupyVsF40ReiLpTRd4qwK7trwiJ
-irzJfY9Gf6grkTx3hMzuujcSkEieO1RBr08GDCSQx4VXj/1EuSyBznMhzGcu
-vfBISe+Riy+VvryKTCXVc2HcO1HIYiqpHxd12YUbvGvjyeOB6bK/8ofV8fS+
-eHhwrkoxcCuO5uUhaygoyTYtjjweFrXP9Lu0MI48Hp7k9nPyWmPJ4+NCPc8i
-URpLHh+FI9+dip5QkMdHXVSwq7ReQR4f93+Lz1yzSUEeH05eSxgmb2PIE6Da
-1tDZ2BhDngCGQDdvM1kMeQL8Prh5h/u8GPIEWBWrHXzTLidPAFW5lzIhVU6e
-EGLL0kw1R073J0REtt1PY0PR5Akhz+pqMNZHkydEtuRMXtHmaPKEMJ0uDE6f
-H02eB3q/2hjS3RdFngfUbsE2CSVR5Hmgw+pmQ/j6KPI8sEU+Zl9hEkWeB/xf
-mHJZxyLJE8H5n1a91j6SPBEGXh5pcD8TQZ4IvzxgGHFXR5AnwhK94pq6N5w8
-EV5J79feloaTJ4ZhD/e4fDSMPPHk/yXJl6ELI0+MytPFe2otw8gTI419pUly
-NpQ8MeJHm/Z9HxRKnifWBtiI+CMy8jzhb9HMSSmQkeeJmpNGYq29jDxPPHx9
-qMT3qpQ8Tzz++YuajkQpeV6Y+6wxYGS+VPIfH5L2fQ==
+1:eJwt1QtMk1cUB/CKii+KiCiKqK28yktaWsrDje8vAwR0oNPpKO9S3lWgFiwg
+loIgiCIOp5QtykMBESZDQdEhMMIcEWRRp+t0osQNH0wX3TJRHAN3/snNl5vc
+8zsnNzf5uNLkT2L0WCxW+uSa+t5UezXz1ePMGz89ruxZOTPQP5VxJl50y3hx
+RznD+j/Q/erTyjU/xlRopzINod4TheqWLxiRcCrT0c/XPa9SHqH6GdAfmbHI
+XlLGxL6PPsSs55uGQj8nbzbM/D2Pje86TN4cZA+nJQzUlZI3D+eO9vh03ThE
+ngGuSz/gNihLmLj3niHS/SU96YKD5BnB6GrMkxczD9B5I1z0aOuJebGf/AVQ
+Pc1KKHtWRPMYY/FHZ94VvS6kfgtxd17L8UqTQvJM0KXzmh/vuY88E8RyNdpK
+ZQF5iyDknd7r3JZP8yzGtYhPa2308skzhYnQIbB2217yluBIyHrzP1rzyJvc
+N/FLg8zzyFuKLI2frXB/LnlmaMkzN2BPaMhbBrunh8YjMjXkmUPBYjdeeptD
+njl8L+b5t+XmkLccyWte+fxtmEPeCkgucw94Q03eSlSJNiruJ+0hj4PlWcPm
+tpXZdD8cHLQxY1fd200+B8aXzwsHOLupnotSw8pHH8qzqB8XmubSZ8VXMslb
+hZfakkvbTDOp/yp4fjetzS89g7xV2KZaX2JwV8W854QW0P1b07zVR0WeBfyS
+LvcOnd9FniVEF3Z4xtjuIs8Sr9I8Ruur08mzBOvGhpMpnHSazwp/blWP5len
+kWeFvu4TZ1t5aeRZ497tprHBFiV51uBo37bXQUmeNSTtgmLjGzvJs4Esda/m
+cexO8mxwtUY7Nn1CQR4Pc0tPKNZWKMjjIeV6kUztpiCPh6UHP15xXJdKni3m
++M46pc5OJc8W1ee2HJ1lmUqeHb4dfsBeNpBCnh0KzqiKK1Up5NmhXdNwT22d
+Qp496k52GHo3JZNnj+51nUnDC5LJc0BvkEHAN5k7yHNASGOXTdHIdvIc4MhI
+4rw/206eI0Zvbud39svJc8RgQZjkjrecvNXQTxQEybuSyFsNWLb/Fc4kkTe5
+71VpD3cnkueEoNnd90d8E8lzQlLAm1O+gwnk8eHeazVRJkmg83yI8thLLzyO
+p/fIx1fxXoLyjHiq50O/b6KAw46nfnzUZhds8KiJI08Atv2Bih/XxNH7EuDh
+uUrZ4O1YmleArKGAZAtlLHkCLOqY6X1pYSx5AjzNGeDltsaQ54wLdQKTxOAY
+8pxRMPL96agJGXnOqI0MdAiuk5HnjAe/xWWs3SQjzxm27ktYBu+iyROiyqKt
+q6Ehmjwh2vwdPYwk0eQJ8btu8w6nedHkCbE6JlP3tkNKnhBJZe7xCQopeSK4
+mpZkyHlSuj8RwrMtfxobiiJPBGlWd72+Noo8EbKZs7mFm6PIE8FwuigwbX4U
+eS7o+3pjUE9/JHkukDsGrkwojiTPBZ1mt+rD1keS54It0jGrcoNI8lzg89KQ
+zzkeQZ4Ydv+0ajOtIsgTY/DV0Xqns+HkifHLQ5Yef004eWIs0cquyfvCyBPj
+dfCDmjvBYeS5om0P/4R0NJQ818n/S7IXSxNKnisqzhTtqTENJc8VSu6VRqY5
+hDxXxI027v8hIIQ8N6zzXSl2HpGQ5wYfkyZear6EPDdUn9JzzbSSkOeGR28O
+F3tdDSbPDU9+/rK6MzGYPHfMfd7gOzI/mPkPCuT2Vg==
              "]]}}}, {}}, {
         DisplayFunction -> Identity, PlotRangePadding -> {{
             Scaled[0.02], 
             Scaled[0.02]}, {
             Scaled[0.02], 
             Scaled[0.05]}}, AxesOrigin -> {0, 0}, 
-         PlotRange -> {{0, 25.}, {0, 0.024287741702132923`}}, DisplayFunction -> 
+         PlotRange -> {{0, 25.}, {0, 0.024335445894913633`}}, 
+         PlotRangeClipping -> True, ImagePadding -> All, DisplayFunction -> 
          Identity, AspectRatio -> 
          NCache[GoldenRatio^(-1), 0.6180339887498948], Axes -> {True, True}, 
          AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, DisplayFunction :> 
@@ -17355,15 +18017,24 @@ qMT3qpQ8Tzz++YuajkQpeV6Y+6wxYGS+VPIfH5L2fQ==
             FormBox["\"Number of events n\"", TraditionalForm], None}}, 
          FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
          GridLines -> {None, None}, GridLinesStyle -> Directive[
-           GrayLevel[0.5, 0.4]], ImageSize -> Medium, Method -> {}, 
-         PlotRange -> {{0, 25.}, {0, 0.024287741702132923`}}, 
+           GrayLevel[0.5, 0.4]], ImageSize -> Medium, 
+         Method -> {"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+                Part[#, 1]], 
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+                Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+                Part[#, 1]], 
+               (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+                Part[#, 2]]}& )}}, 
+         PlotRange -> {{0, 25.}, {0, 0.024335445894913633`}}, 
          PlotRangeClipping -> True, PlotRangePadding -> {{
             Scaled[0.02], 
             Scaled[0.02]}, {
             Scaled[0.02], 
             Scaled[0.05]}}, Ticks -> {Automatic, Automatic}}],FormBox[
         FormBox[
-         TemplateBox[{"\"Scenario G\""}, "PointLegend", 
+         TemplateBox[{"\"Scenario Fprime\""}, "PointLegend", 
           DisplayFunction -> (FormBox[
             StyleBox[
              StyleBox[
@@ -17378,7 +18049,7 @@ qMT3qpQ8Tzz++YuajkQpeV6Y+6wxYGS+VPIfH5L2fQ==
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.25], 
+                    PointSize[0.16500000000000004`], 
                     RGBColor[0.368417, 0.506779, 0.709798], 
                     AbsoluteThickness[1.6]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
@@ -17387,7 +18058,7 @@ qMT3qpQ8Tzz++YuajkQpeV6Y+6wxYGS+VPIfH5L2fQ==
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[0.25], 
+                    PointSize[0.16500000000000004`], 
                     RGBColor[0.368417, 0.506779, 0.709798], 
                     AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
@@ -17417,12 +18088,11 @@ qMT3qpQ8Tzz++YuajkQpeV6Y+6wxYGS+VPIfH5L2fQ==
                RowBox[{"{", 
                  RowBox[{"Directive", "[", 
                    RowBox[{
-                    RowBox[{"PointSize", "[", "0.01388888888888889`", "]"}], 
+                    RowBox[{"PointSize", "[", "0.009166666666666668`", "]"}], 
                     ",", 
                     InterpretationBox[
                     ButtonBox[
                     TooltipBox[
-                    RowBox[{
                     GraphicsBox[{{
                     GrayLevel[0], 
                     RectangleBox[{0, 0}]}, {
@@ -17435,9 +18105,9 @@ qMT3qpQ8Tzz++YuajkQpeV6Y+6wxYGS+VPIfH5L2fQ==
                     0.24561133333333335`, 0.3378526666666667, 
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
-                    Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
                     AbsoluteCurrentValue[Magnification]}]], 
-                    "\[InvisibleSpace]"}], 
                     "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
                     None, BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -17496,8 +18166,22 @@ qMT3qpQ8Tzz++YuajkQpeV6Y+6wxYGS+VPIfH5L2fQ==
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Output",
  CellChangeTimes->{3.714910806100054*^9, 3.714910892858036*^9, 
-  3.715788815821602*^9}]
-}, Open  ]]
+  3.715788815688328*^9, 3.715794216066709*^9, 3.7157942569875393`*^9}]
+}, Open  ]],
+
+Cell["\<\
+As with Scenario F, the definite channel dominates the probability. Here the \
+difference is even larger becasue of the difference in rates as well.\
+\>", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+  3.711952701276271*^9, 3.7119527240530663`*^9}, {3.711952790680437*^9, 
+  3.711952816880101*^9}, {3.711952917843008*^9, 3.711953023402998*^9}, {
+  3.711953060720867*^9, 3.711953232129037*^9}, {3.715793692254817*^9, 
+  3.715793762280158*^9}, {3.715793822052051*^9, 3.715793855783333*^9}, {
+  3.715793889671894*^9, 3.715793907398807*^9}, {3.715794251422497*^9, 
+  3.715794303722699*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -17506,6 +18190,15 @@ Cell["Miscellaneous", "Section",
  CellChangeTimes->{{3.711885817263112*^9, 3.7118858261729918`*^9}, {
   3.711886356621222*^9, 3.7118863578861713`*^9}}],
 
+Cell["Add your own code here!", "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+  3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+  3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+  3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.711881233757771*^9, 
+  3.71188135049089*^9}, {3.711953905891169*^9, 3.711954012956711*^9}, {
+  3.711954044968213*^9, 3.711954117951408*^9}, {3.711954817745946*^9, 
+  3.711954851708304*^9}}],
+
 Cell[BoxData[
  RowBox[{"(*", 
   RowBox[{
@@ -17513,13 +18206,173 @@ Cell[BoxData[
    "\[IndentingNewLine]", 
    RowBox[{"Export", "[", 
     RowBox[{"outputPath", ",", "plot"}], "]"}]}], "*)"}]], "Input",
- CellChangeTimes->{{3.711887507681859*^9, 3.711887524361163*^9}}]
-}, Open  ]]
+ CellChangeTimes->{{3.711887507681859*^9, 3.711887524361163*^9}, {
+  3.715793190447075*^9, 3.715793200268461*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["References", "Section",
+ CellChangeTimes->{{3.711885817263112*^9, 3.7118858261729918`*^9}, {
+  3.711886356621222*^9, 3.7118863578861713`*^9}, {3.7157943327604637`*^9, 
+  3.715794336273263*^9}}],
+
+Cell[TextData[{
+ StyleBox["LIGO\[Dash]Virgo papers\n",
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox["Pre-detection rates review\n",
+  FontWeight->"Bold"],
+ "Abadie et al. (2010); ",
+ ButtonBox["arXiv:1003.2480",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1003.2480"], None},
+  ButtonNote->"https://arxiv.org/abs/1003.2480"],
+ "\n\n",
+ StyleBox["S6 BBH search and upper limits\n",
+  FontWeight->"Bold"],
+ "Aasi et al. (2013);",
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ ButtonBox["arXiv:1209.6533",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1209.6533"], None},
+  ButtonNote->"https://arxiv.org/abs/1209.6533"],
+ "\n\n",
+ StyleBox["Summary of first observing run (O1) and the first BBH discoveries \
+GW150914, LVT151012 and GW151226\n",
+  FontWeight->"Bold"],
+ "Abbott et al. (2016a); ",
+ ButtonBox["arXiv:1606.04856",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1606.04856"], None},
+  ButtonNote->"https://arxiv.org/abs/1606.04856"],
+ "\n\n",
+ StyleBox["Discovery of GW170104 and most recent BBH merger rates (at time of \
+writing)",
+  FontWeight->"Bold"],
+ "\nAbbott et al. (2017); ",
+ ButtonBox["arXiv:1706.01812",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1706.01812"], None},
+  ButtonNote->"https://arxiv.org/abs/1706.01812"],
+ StyleBox["\n\nDiscovery of GW170814 (which brings ",
+  FontWeight->"Bold"],
+ StyleBox["n",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[" to ~5)",
+  FontWeight->"Bold"],
+ "\nAbbott et al. (2017a); ",
+ ButtonBox["arXiv:1709.09660",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1709.09660"], None},
+  ButtonNote->"https://arxiv.org/abs/1709.09660"]
+}], "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+   3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.711881233757771*^9, 
+   3.71188135049089*^9}, {3.711953905891169*^9, 3.711954012956711*^9}, {
+   3.711954044968213*^9, 3.711954117951408*^9}, {3.711954817745946*^9, 
+   3.711954851708304*^9}, {3.7157949577257957`*^9, 3.7157949901871843`*^9}, {
+   3.715795223321003*^9, 3.715795252530857*^9}, {3.7157953211790524`*^9, 
+   3.715795321179858*^9}, {3.7157953526980877`*^9, 3.7157954084732437`*^9}, {
+   3.715795643127315*^9, 3.715795664971086*^9}, {3.715795703462677*^9, 
+   3.715795718080764*^9}, {3.715796034788575*^9, 3.715796070462162*^9}, {
+   3.7157961215677156`*^9, 3.7157962177385273`*^9}, {3.715796256016223*^9, 
+   3.715796474707015*^9}, {3.715796530846635*^9, 3.715796644526293*^9}, 
+   3.715797536765177*^9}],
+
+Cell[TextData[{
+ StyleBox["Rate prediction papers\n",
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox["Pre-detection rates\nIsolated field binaries\n",
+  FontWeight->"Bold"],
+ "Mennekins & Vanbeveren (2014); ",
+ ButtonBox["arXiv:1307.0959",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1307.0959"], None},
+  ButtonNote->"https://arxiv.org/abs/1307.0959"],
+ "\nDominik et al. (2015); ",
+ ButtonBox["arXiv:1405.7016",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1405.7016"], None},
+  ButtonNote->"https://arxiv.org/abs/1405.7016"],
+ "\n",
+ StyleBox["Dynamical formed binaries",
+  FontWeight->"Bold"],
+ "\nZiosi et al. (2014); ",
+ ButtonBox["arXiv:1404.7147",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1404.7147"], None},
+  ButtonNote->"https://arxiv.org/abs/1404.7147"],
+ "\nRodriguez et al. (2016a); ",
+ ButtonBox["arXiv:1602.02444",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1602.02444"], None},
+  ButtonNote->"https://arxiv.org/abs/1602.02444"],
+ "\n\n",
+ StyleBox["Post-detection rates\nIsolated field binaries\n",
+  FontWeight->"Bold"],
+ "Belczynski et al. (2016); ",
+ ButtonBox["arXiv:1602.04531",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1602.04531"], None},
+  ButtonNote->"https://arxiv.org/abs/1602.04531"],
+ "\nEldridge & Stanway (2016); ",
+ ButtonBox["arXiv:1602.03790",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1602.03790"], None},
+  ButtonNote->"https://arxiv.org/abs/1602.03790"],
+ StyleBox["\nDynamically formed binaries\n",
+  FontWeight->"Bold"],
+ "Rodriguez et al (2016b); ",
+ ButtonBox["arXiv:1604.04254",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1604.04254"], None},
+  ButtonNote->"https://arxiv.org/abs/1604.04254"],
+ "\nAskar et al. (2017); ",
+ ButtonBox["arXiv:1608.02520",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://arxiv.org/abs/1608.02520"], None},
+  ButtonNote->"https://arxiv.org/abs/1608.02520"],
+ "\n"
+}], "Text",
+ CellChangeTimes->{{3.711879959318205*^9, 3.711880020547838*^9}, {
+   3.711880143465517*^9, 3.7118801853286467`*^9}, {3.711880217320009*^9, 
+   3.711880344589905*^9}, {3.711880710383547*^9, 3.7118808325736923`*^9}, {
+   3.7118808812358294`*^9, 3.7118809449628563`*^9}, {3.711881233757771*^9, 
+   3.71188135049089*^9}, {3.711953905891169*^9, 3.711954012956711*^9}, {
+   3.711954044968213*^9, 3.711954117951408*^9}, {3.711954817745946*^9, 
+   3.711954851708304*^9}, {3.7157949577257957`*^9, 3.7157949901871843`*^9}, {
+   3.715795223321003*^9, 3.715795252530857*^9}, {3.7157953211790524`*^9, 
+   3.715795321179858*^9}, {3.7157953526980877`*^9, 3.7157954084732437`*^9}, {
+   3.715795643127315*^9, 3.715795664971086*^9}, {3.715795703462677*^9, 
+   3.715795718080764*^9}, {3.715796034788575*^9, 3.715796070462162*^9}, {
+   3.7157961215677156`*^9, 3.7157962177385273`*^9}, {3.715796256016223*^9, 
+   3.715796474707015*^9}, {3.715796530846635*^9, 3.715796644526293*^9}, {
+   3.7157966970399303`*^9, 3.715797006866848*^9}, {3.715797036896318*^9, 
+   3.7157972923558064`*^9}, 3.7157975344240627`*^9}]
+}, Closed]]
 },
-WindowSize->{1280, 685},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
-2014)",
+WindowSize->{814, 810},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (April 11, 2016)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -17534,85 +18387,104 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 385, 7, 99, "Section"],
-Cell[CellGroupData[{
-Cell[990, 33, 5985, 155, 388, "Input"],
-Cell[6978, 190, 116358, 1992, 70, "Output"]
-}, Open  ]]
+Cell[580, 22, 616, 10, 101, "Section"],
+Cell[1199, 34, 760, 14, 129, "Text"],
+Cell[1962, 50, 435, 10, 55, "Input"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[123385, 2188, 153, 2, 50, "Section"],
-Cell[123541, 2192, 746, 15, 163, "Text"],
-Cell[124290, 2209, 411, 10, 46, "Input"],
+Cell[2434, 65, 451, 8, 87, "Section"],
+Cell[2888, 75, 512, 8, 71, "Text"],
 Cell[CellGroupData[{
-Cell[124726, 2223, 9928, 266, 565, "Input"],
-Cell[134657, 2491, 14795, 296, 70, "Output"],
-Cell[149455, 2789, 30622, 602, 70, "Output"]
-}, Open  ]]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[180126, 3397, 172, 2, 50, "Section"],
-Cell[180301, 3401, 1514, 26, 296, "Text"],
-Cell[CellGroupData[{
-Cell[181840, 3431, 11741, 311, 992, "Input"],
-Cell[193584, 3744, 15056, 300, 253, "Output"],
-Cell[208643, 4046, 30879, 605, 253, "Output"]
-}, Open  ]]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[239571, 4657, 194, 3, 50, "Section"],
-Cell[239768, 4662, 749, 15, 163, "Text"],
-Cell[CellGroupData[{
-Cell[240542, 4681, 8569, 221, 713, "Input"],
-Cell[249114, 4904, 9289, 188, 70, "Output"],
-Cell[258406, 5094, 19518, 388, 70, "Output"]
+Cell[3425, 87, 5985, 155, 712, "Input"],
+Cell[9413, 244, 116366, 1992, 254, "Output"]
 }, Open  ]],
-Cell[277939, 5485, 794, 14, 87, "Text"],
+Cell[125794, 2239, 549, 9, 51, "Text"]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[278758, 5503, 8456, 217, 747, "Input"],
-Cell[287217, 5722, 9332, 189, 70, "Output"],
-Cell[296552, 5913, 19547, 388, 70, "Output"]
+Cell[126380, 2253, 153, 2, 51, "Section"],
+Cell[126536, 2257, 1985, 69, 251, "Text"],
+Cell[CellGroupData[{
+Cell[128546, 2330, 10416, 277, 1465, "Input"],
+Cell[138965, 2609, 14795, 296, 248, "Output"],
+Cell[153763, 2907, 30622, 602, 248, "Output"]
+}, Open  ]],
+Cell[184400, 3512, 638, 10, 91, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[185075, 3527, 172, 2, 51, "Section"],
+Cell[185250, 3531, 2861, 81, 448, "Text"],
+Cell[CellGroupData[{
+Cell[188136, 3616, 12667, 332, 1817, "Input"],
+Cell[200806, 3950, 15056, 300, 248, "Output"],
+Cell[215865, 4252, 30887, 605, 248, "Output"]
+}, Open  ]],
+Cell[246767, 4860, 1659, 40, 152, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[248463, 4905, 194, 3, 51, "Section"],
+Cell[248660, 4910, 1989, 70, 231, "Text"],
+Cell[CellGroupData[{
+Cell[250674, 4984, 9667, 245, 1443, "Input"],
+Cell[260344, 5231, 9289, 188, 248, "Output"],
+Cell[269636, 5421, 19518, 388, 250, "Output"]
+}, Open  ]],
+Cell[289169, 5812, 801, 13, 109, "Text"],
+Cell[CellGroupData[{
+Cell[289995, 5829, 9334, 236, 1399, "Input"],
+Cell[299332, 6067, 9332, 189, 248, "Output"],
+Cell[308667, 6258, 19551, 388, 248, "Output"]
+}, Open  ]],
+Cell[328233, 6649, 992, 16, 130, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[329262, 6670, 144, 2, 51, "Section"],
+Cell[329409, 6674, 2423, 77, 271, "Text"],
+Cell[CellGroupData[{
+Cell[331857, 6755, 11345, 289, 1434, "Input"],
+Cell[343205, 7046, 9299, 188, 248, "Output"],
+Cell[352507, 7236, 19525, 388, 248, "Output"]
+}, Open  ]],
+Cell[372047, 7627, 947, 14, 91, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[373031, 7646, 336, 4, 51, "Section"],
+Cell[373370, 7652, 525, 7, 31, "Text"],
+Cell[373898, 7661, 1246, 27, 143, "Input"],
+Cell[CellGroupData[{
+Cell[375169, 7692, 27019, 661, 2101, "Input"],
+Cell[402191, 8355, 449892, 8003, 499, "Output"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[316148, 6307, 144, 2, 50, "Section"],
-Cell[316295, 6311, 1122, 19, 182, "Text"],
+Cell[852132, 16364, 194, 3, 51, "Section"],
+Cell[852329, 16369, 2878, 82, 291, "Text"],
 Cell[CellGroupData[{
-Cell[317442, 6334, 10385, 266, 743, "Input"],
-Cell[327830, 6602, 9299, 188, 70, "Output"],
-Cell[337132, 6792, 19525, 388, 70, "Output"]
-}, Open  ]]
+Cell[855232, 16455, 8513, 214, 1120, "Input"],
+Cell[863748, 16671, 9189, 185, 244, "Output"],
+Cell[872940, 16858, 19423, 386, 244, "Output"]
+}, Open  ]],
+Cell[892378, 17247, 777, 12, 51, "Text"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[356706, 7186, 336, 4, 50, "Section"],
-Cell[357045, 7192, 1246, 27, 80, "Input"],
+Cell[893192, 17264, 307, 4, 51, "Section"],
+Cell[893502, 17270, 2570, 77, 271, "Text"],
 Cell[CellGroupData[{
-Cell[358316, 7223, 26571, 649, 913, "Input"],
-Cell[384890, 7874, 449892, 8003, 499, "Output"]
-}, Open  ]]
+Cell[896097, 17351, 8673, 215, 1120, "Input"],
+Cell[904773, 17568, 9723, 194, 244, "Output"],
+Cell[914499, 17764, 20600, 404, 244, "Output"]
+}, Open  ]],
+Cell[935114, 18171, 774, 12, 50, "Text"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[834831, 15883, 194, 3, 50, "Section"],
-Cell[835028, 15888, 1097, 19, 163, "Text"],
-Cell[CellGroupData[{
-Cell[836150, 15911, 7881, 200, 619, "Input"],
-Cell[844034, 16113, 9189, 185, 70, "Output"],
-Cell[853226, 16300, 19423, 386, 70, "Output"]
-}, Open  ]]
+Cell[935925, 18188, 151, 2, 51, "Section"],
+Cell[936079, 18192, 498, 7, 31, "Text"],
+Cell[936580, 18201, 342, 8, 55, "Input"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[872698, 16692, 240, 3, 50, "Section"],
-Cell[872941, 16697, 1052, 20, 163, "Text"],
-Cell[CellGroupData[{
-Cell[874018, 16721, 7950, 202, 619, "Input"],
-Cell[881971, 16925, 9141, 185, 250, "Output"],
-Cell[891115, 17112, 19392, 386, 249, "Output"]
-}, Open  ]]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[910556, 17504, 151, 2, 50, "Section"],
-Cell[910710, 17508, 293, 7, 46, "Input"]
-}, Open  ]]
+Cell[936959, 18214, 199, 3, 51, "Section"],
+Cell[937161, 18219, 2730, 70, 344, "Text"],
+Cell[939894, 18291, 3154, 78, 364, "Text"]
+}, Closed]]
 }
 ]
 *)
